@@ -1,2 +1,2 @@
 # shareposts
-Building a Shareposts application using the MVC-Framework
+Building a Shareposts application using PHP MVC-Framework.
