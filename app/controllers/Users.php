@@ -68,17 +68,16 @@ class Users extends Controller
 
         // Register User
         if($this->userModel->register($data)) {
+          flash('register_success', 'You are registered and can log in.');
           redirect('/users/login');
         } else {
           die('Something went wrong');
         }
 
-
       } else {
         // Load view with errors
         $this->view('users/register', $data);
       }
-
 
     } else {
       // Init data
@@ -133,7 +132,6 @@ class Users extends Controller
         // Load view with errors
         $this->view('users/login', $data);
       }
-
 
     } else {
       // Init data
