@@ -1,4 +1,4 @@
 ##### MacOS
 # General
 .DS_Store
-**/app/config/config.php
+/app/config/config.php
