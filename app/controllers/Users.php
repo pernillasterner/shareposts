@@ -149,7 +149,6 @@ class Users extends Controller
         // Load view with errors
         $this->view('users/login', $data);
       }
-
     } else {
       // Init data
       $data = [
