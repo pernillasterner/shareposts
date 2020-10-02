@@ -22,7 +22,7 @@ class Post {
                       ORDER BY posts.created_at DESC
                       ');
 
-    // Return more than one row
+    // Returns more than one row
     $results = $this->db->resultSet();
     return $results;
   }
@@ -61,6 +61,20 @@ class Post {
     $this->db->bind(':title', $data['title']);
     $this->db->bind(':body', $data['body']);
     $this->db->bind(':id', $data['id']);
+
+    // Execute
+    if($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function deletePost($id)
+  {
+    $this->db->query('DELETE FROM posts WHERE id = :id');
+    // Bind values
+    $this->db->bind(':id', $id);
 
     // Execute
     if($this->db->execute()) {
